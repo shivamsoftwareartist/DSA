@@ -203,6 +203,21 @@ for row in range(n-1,0,-1):
         for col in range(0,1):
             print("*", end="")
     print(" ")
+    
+
+#Solution 16
+arr = [None] * n
+
+for row in range(0,numRows):
+    rowNew = [None] * (row+1)
+    rowNew[0] = 1
+    rowNew[len(rowNew)-1] = 1
+
+    for j in range(1,len(rowNew)-1):
+        rowAbove = arr[row-1]
+        rowNew[j] = rowAbove[j] + rowAbove[j-1]
+    arr[row] = rowNew
+print(arr)
 
 
 #Solution 17
